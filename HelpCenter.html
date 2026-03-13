@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Help Center</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Top bar (like real Help Center) */
+        .head {
+            height: 60px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.3s ease;
+        }
+
+        .head img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .head a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #t {
+            font-size: 22px;
+            margin: 0 0 0 10px;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        #eng {
+            margin-left: auto;
+            padding: 6px 14px;
+            font-size: 14px;
+            border-radius: 18px;
+            border: 1px solid #ccc;
+            background-color: rgba(128, 128, 128, 0.06);
+            cursor: pointer;
+        }
+
+        /* Layout */
+        .help-layout {
+            display: flex;
+            margin-top: 80px;
+            padding: 20px;
+            gap: 24px;
+        }
+
+        /* Left sidebar */
+        .left_help {
+            width: 260px;
+        }
+
+        .help_a {
+            text-decoration: none;
+            color: #111b21;
+        }
+
+        .help_p {
+            margin: 0 0 12px 0;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .help_p.active,
+        .help_p:hover {
+            background-color: #e7fce9;
+            color: #008c3b;
+        }
+
+        .help_section_title {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #667781;
+            margin: 20px 0 8px;
+        }
+
+        /* Main content */
+        .main_help {
+            flex: 1;
+        }
+
+        .help_hero {
+            background-color: white;
+            border-radius: 16px;
+            padding: 24px 24px 20px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+            margin-bottom: 24px;
+        }
+
+        .help_hero h1 {
+            margin: 0 0 8px;
+            font-size: 28px;
+        }
+
+        .help_hero p {
+            margin: 0 0 18px;
+            color: #667781;
+            font-size: 15px;
+        }
+
+        .help_search {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: 999px;
+            border: 1px solid #d1d7db;
+            padding: 8px 14px;
+            background-color: #f8f9fa;
+        }
+
+        .help_search input {
+            border: none;
+            outline: none;
+            background: transparent;
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .help_search span {
+            font-size: 18px;
+            color: #667781;
+        }
+
+        .help_grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .help_card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 18px 18px 14px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .help_card h3 {
+            margin: 0 0 8px;
+            font-size: 17px;
+        }
+
+        .help_card p {
+            margin: 0;
+            font-size: 14px;
+            color: #667781;
+        }
+
+        .help_links {
+            margin-top: 12px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .help_links li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .help_links a {
+            color: #008c3b;
+            text-decoration: none;
+        }
+
+        .help_links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Simple responsive layout */
+        @media (max-width: 768px) {
+            .help-layout {
+                flex-direction: column;
+                padding: 16px;
+            }
+
+            .left_help {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                overflow-x: auto;
+            }
+
+            .help_section_title {
+                display: none;
+            }
+
+            .help_p {
+                white-space: nowrap;
+            }
+
+            .help_hero h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <a href="index.html"><img src="WhatsApp.jpg" alt="WhatsApp Logo"></a>
+        <a href="index.html">
+            <p id="t"><b>Help Center</b></p>
+        </a>
+        <button id="eng">English (US)</button>
+    </div>
+
+    <div class="help-layout scroll-animate">
+        <aside class="left_help">
+            <div>
+                <p class="help_section_title">BASICS</p>
+                <a href="#" class="help_a">
+                    <p class="help_p active">Get started</p>
+                </a>
+                <a href="#" class="help_a">
+                    <p class="help_p">Account &amp; profile</p>
+                </a>
+                <a href="#" class="help_a">
+                    <p class="help_p">Chats &amp; calls</p>
+                </a>
+                <a href="#" class="help_a">
+                    <p class="help_p">Privacy &amp; security</p>
+                </a>
+            </div>
+
+            <div style="margin-top: 24px;">
+                <p class="help_section_title">PLATFORMS</p>
+                <a href="#" class="help_a">
+                    <p class="help_p">Android</p>
+                </a>
+                <a href="#" class="help_a">
+                    <p class="help_p">iPhone</p>
+                </a>
+                <a href="#" class="help_a">
+                    <p class="help_p">Web &amp; Desktop</p>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main_help">
+            <section class="help_hero">
+                <h1>How can we help you?</h1>
+                <p>Search for help articles about messaging, calls, privacy, and more.</p>
+                <div class="help_search">
+                    <span>🔍</span>
+                    <input type="text" placeholder="Search the Help Center (static demo)" />
+                </div>
+            </section>
+
+            <section>
+                <h2 style="font-size: 18px; margin: 0 0 10px;">Popular topics</h2>
+                <div class="help_grid">
+                    <div class="help_card">
+                        <h3>Using WhatsApp Web</h3>
+                        <p>Learn how to log in, link devices, and send messages from your browser.</p>
+                        <ul class="help_links">
+                            <li><a href="#">Link a device</a></li>
+                            <li><a href="#">Log out of WhatsApp Web</a></li>
+                        </ul>
+                    </div>
+                    <div class="help_card">
+                        <h3>Manage your privacy</h3>
+                        <p>Control your last seen, online status, profile photo and more.</p>
+                        <ul class="help_links">
+                            <li><a href="#">Change privacy settings</a></li>
+                            <li><a href="#">Block or report contacts</a></li>
+                        </ul>
+                    </div>
+                    <div class="help_card">
+                        <h3>Chats &amp; backups</h3>
+                        <p>Keep your messages safe with chat history and backup options.</p>
+                        <ul class="help_links">
+                            <li><a href="#">Back up and restore chats</a></li>
+                            <li><a href="#">Manage storage</a></li>
+                        </ul>
+                    </div>
+                    <div class="help_card">
+                        <h3>Using WhatsApp Business</h3>
+                        <p>Get help with business profiles, catalogs and messaging tools.</p>
+                        <ul class="help_links">
+                            <li><a href="#">Create a business profile</a></li>
+                            <li><a href="#">Use quick replies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

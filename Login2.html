@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Login with Mobile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: beige;
+        }
+
+        .login-header {
+            display: flex;
+        }
+
+        .login-banner,
+        .login-main {
+            margin: 20px 210px 15px;
+            background-color: white;
+            display: flex;
+            padding: 30px;
+            gap: 30px;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 800px;
+        }
+
+        .login-main {
+            margin: 10px 210px;
+            text-align: center;
+            height: 420px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .login-banner,
+            .login-main {
+                width: calc(100% - 40px);
+                margin: 20px auto 10px !important;
+                padding: 16px;
+                height: auto;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            p {
+                word-wrap: break-word;
+            }
+
+            select,
+            input,
+            button {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body bgcolor="beige">
+    <div class="login-header" style="display:flex">
+        <a href="index.html" style="text-decoration: none;"><img src="WhatsApp.jpg" style="margin: 2px 0px 0 15px;
+    width: 60px;
+    height: 60px;"></a>
+        <a href="index.html" style="text-decoration: none;"><p id="t" style="font-size:25px;color:rgb(41, 237, 48);width:fit-content;height:fit-content;margin:20px 0;">
+            <b>WhatsApp</b>
+        </p></a>
+    </div>
+    <div class="login-banner">
+        <img src="call.png" style="margin:10px 0 0 0;
+    width: 60px;
+    height: 60px;">
+        <p><span style="font-size:20px;">Download WhatsApp for Windows<br></span>Make calls, share your screen and get a
+            faster experience when
+            you<br> download the Windows app.</p>
+        <a href="https://web.whatsapp.com/desktop/windows/release/x64/WhatsAppSetup.exe"><button
+            style="background-color: rgb(52, 247, 91);border-radius:50px;height:fit-content;width:fit-content;padding: 15px 30px;margin:20px 50px;">Download
+            <img src="down.jpg" height="15px" width="15px" /></button></a>
+    </div>
+    <div class="login-main">
+        <p style="font-size: 40px;">Enter phone number</p>
+        <p style="font-size: 20px;margin-top: -40px;">Select a country and enter your phone number.</p><br>
+        <select id="country" onchange="updateCode()"
+            style="font-size:20px;padding:5px 10px;border-radius: 30px;width:320px;height:45px;border:1px solid black;">
+            <option value="">Select country</option>
+            <option value="+91">India</option>
+            <option value="+1">USA</option>
+            <option value="+44">UK</option>
+            <option value="+1">Canada</option>
+            <option value="+61">Australia</option>
+        </select>
+        <br><br>
+
+        <input id="code" readonly value="+91"
+            style="font-size:20px;padding:5px 5px;width:70px;height:45px;border-radius: 30px 0 0 30px;border:1px solid black;border-right: none;">
+
+        <input id="phone" type="text" placeholder="Phone number"
+            style="font-size:20px;padding:5px 20px;width:250px;height:45px;border-radius: 0 30px  30px 0;border:1px solid black;border-left: none;margin-left:-5px;">
+
+        <br><br>
+        <button onclick="goToOTP()"
+            style="background-color: rgb(7, 180, 41);border-radius:50px;height:fit-content;width:fit-content;padding: 15px 30px;margin-top:10px;font-size:13px;color:white;border:0;">Next</button><br><br>
+        <a href="LogIn.html">
+            <p style="text-decoration:underline 2px rgb(46, 210, 46);">Log in with QR code></p>
+        </a>
+    </div>
+    <p style="margin:30px 250px;text-align: center;font-size: 23px;">Don't have a WhatsApp account? <span
+            style="text-decoration:underline 2px rgb(46, 210, 46);">Get started-></span></p>
+    <p style="color:gray;font-size: 18px;text-align: center;">Your personal messages are end-to-end encrypted</p>
+    <p style="color:gray;font-size: 15px;text-align: center;">Terms & Privacy Policy</p>
+
+    <script>
+        function updateCode() {
+            const country = document.getElementById("country");
+            document.getElementById("code").value = country.value;
+        }
+
+        function goToOTP() {
+            const code = document.getElementById("code").value;
+            const phone = document.getElementById("phone").value;
+
+            if (!code || !phone) {
+                alert("Please enter valid phone number");
+                return;
+            }
+
+            // Save for OTP page (demo purpose)
+            sessionStorage.setItem("fullNumber", code + phone);
+
+            // Redirect to OTP page
+            window.location.href = "otp.html";
+        }
+    </script>
+
+</body>
+
+</html>

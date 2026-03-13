@@ -1,0 +1,290 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Features</title>
+</head>
+<style>
+    /* Head-1  */
+    .head {
+        height: 80px;
+        width: 100%;
+        background-color: rgba(245, 245, 245, 0.889);
+        display: flex;
+        justify-content: center;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        transition: background-color 0.3s ease;
+    }
+
+    .head.scrolled {
+        background-color: rgba(245, 245, 245, 0.75);
+        backdrop-filter: blur(6px);
+    }
+
+    .head img {
+        margin: 2px 0px 0 15px;
+        width: 60px;
+        height: 60px;
+    }
+
+    #t {
+        font-size: 25px;
+        margin-top: 17px;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    #t1,
+    #t2,
+    #t3,
+    #t4,
+    #t5,
+    #t6 {
+        font-size: 20px;
+        margin: 20px;
+        height: fit-content;
+        width: fit-content;
+        /* transition:2s; */
+    }
+
+    #t1:hover,
+    #t2:hover,
+    #t3:hover,
+    #t4:hover,
+    #t5:hover,
+    #t6:hover {
+        text-decoration: underline 2px rgb(41, 237, 48);
+        /* transition-timing-function: ease-in-out; */
+    }
+
+    .log {
+        border-radius: 30px;
+        height: 50px;
+        width: 120px;
+        text-align: center;
+        font-size: medium;
+        border: solid 1px black;
+        margin: 15px;
+        background-color: white;
+    }
+
+    .down1 {
+        border-radius: 30px;
+        height: 50px;
+        width: 160px;
+        text-align: center;
+        font-size: 15px;
+        border: solid 1px black;
+        margin: 15px;
+        background-color: rgb(41, 237, 48);
+        text-decoration: none;
+    }
+
+    #down_img {
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+    }
+
+    .head a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .box {
+        height: 230px;
+        width: 210px;
+        max-width: 1240px;
+        border: 1px solid rgb(190, 188, 188);
+        border-radius: 30px;
+        padding: 20px;
+    }
+
+    .box:hover {
+        background-color: rgb(27, 213, 33);
+        color: white;
+        border: 1px solid black;
+
+        .box_img {
+            background-color: white;
+        }
+    }
+
+    .box_img {
+        background-color: rgb(41, 237, 48);
+        border-radius: 30px;
+        height: 35px;
+        width: 35px;
+        background-repeat: cover;
+    }
+
+    .box_p1 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .box_p2 {
+        font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .head {
+            flex-wrap: wrap;
+            height: auto;
+            padding: 10px;
+        }
+
+        .head img {
+            width: 48px;
+            height: 48px;
+            margin-top: 4px;
+        }
+
+        #t1,
+        #t2,
+        #t3,
+        #t4,
+        #t5,
+        #t6 {
+            font-size: 14px;
+            margin: 6px;
+        }
+
+        .log,
+        .down1 {
+            height: 40px;
+            padding: 0 16px;
+            margin: 6px;
+            font-size: 13px;
+        }
+
+        #top,
+        #bottom {
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin: 80px auto 20px;
+        }
+
+        #bottom {
+            margin-top: 10px;
+        }
+
+        .box {
+            width: 85%;
+            max-width: 340px;
+        }
+
+        .box_p1 {
+            font-size: 22px;
+        }
+
+        .box_p2 {
+            font-size: 16px;
+        }
+    }
+</style>
+
+<body>
+    <div class="head">
+        <a href="index.html"><img src="WhatsApp.jpg" alt="WhatsApp Logo"></a>
+        <a href="index.html" style="text-decoration: none;">
+            <p id="t" style="color:rgb(41, 237, 48);"><b>WhatsApp</b></p>
+        </a>
+        <a href="Features.html">
+            <p id="t1">Features</p>
+        </a>
+        <a href="Privacy.html">
+            <p id="t2">Privacy</p>
+        </a>
+        <a href="HelpCenter.html">
+            <p id="t3">Help Center</p>
+        </a>
+        <a href="Blog.html">
+            <p id="t4">Blog</p>
+        </a>
+        <a href="ForBusiness.html">
+            <p id="t5">For Business</p>
+        </a>
+        <a href="Apps.html">
+            <p id="t6">Apps</p>
+        </a>
+        <a href="LogIn.html"><button class="log">Log in &raquo;</button></a>
+        <a href="https://web.whatsapp.com/desktop/windows/release/x64/WhatsAppSetup.exe"><button class="down1">Download
+                <img id="down_img" src="down.jpg" alt="Download Icon" /></button></a>
+    </div>
+
+    <div id="top" style="margin-top:100px;display: flex;gap:30px;justify-content: center;">
+        <div class="box">
+            <img class="box_img" src="public.png">
+            <p class="box_p1">Calling</p>
+            <p class="box_p2">Stay connected with voice<br> and video. </p>
+            <p class="box_p2">➡</p>
+        </div>
+        <div class="box">
+            <img class="box_img" src="mood.png">
+            <p class="box_p1">Messaging</p>
+            <p class="box_p2">Say it with stickers, voice,<br>GIFs and more.</p>
+            <p class="box_p2">➡</p>
+        </div>
+        <div class="box">
+            <img class="box_img" src="person.png">
+            <p class="box_p1">Groups</p>
+            <p class="box_p2">Messaging features you<br>need to connect in<br>groups.</p>
+            <p class="box_p2">➡</p>
+        </div>
+        <div class="box">
+            <img class="box_img" src="wifi.png">
+            <p class="box_p1">Channels</p>
+            <p class="box_p2">Stay updated on topics<br>you care about.</p>
+            <p class="box_p2">➡</p>
+        </div>
+    </div>
+
+    <div id="bottom" style="margin-top:50px;display: flex;gap:30px;justify-content: center;">
+        <div class="box">
+            <img class="box_img" src="public.png">
+            <p class="box_p1">Meta AI</p>
+            <p class="box_p2">Get help with anything, all<br>with safety and security.</p>
+            <p class="box_p2">➡</p>
+        </div>
+        <div class="box">
+            <img class="box_img" src="mood.png">
+            <p class="box_p1">Status</p>
+            <p class="box_p2">Share your everyday with<br>photos, videos, and voice.</p>
+            <p class="box_p2">➡</p>
+        </div>
+        <div class="box">
+            <img class="box_img" src="lock.png">
+            <p class="box_p1">Security</p>
+            <p class="box_p2">Layers of protection to<br>help you stay safe..</p>
+            <p class="box_p2">➡</p>
+        </div>
+    </div>
+    <script>
+        /*for .head fixed*/
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector(".head");
+
+            if (window.scrollY > 20) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+
+</html>

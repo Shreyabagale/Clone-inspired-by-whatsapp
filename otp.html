@@ -1,0 +1,113 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp OTP</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: beige;
+        }
+
+        .login-header {
+            display: flex;
+        }
+
+        .login-banner,
+        .login-main {
+            margin: 20px 210px 15px;
+            background-color: white;
+            display: flex;
+            padding: 30px;
+            gap: 30px;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 800px;
+        }
+
+        .login-main {
+            margin: 10px 210px;
+            flex-direction: column;
+            height: 450px;
+        }
+
+        @media (max-width: 768px) {
+            .login-banner,
+            .login-main {
+                width: calc(100% - 40px);
+                margin: 20px auto 10px !important;
+                padding: 16px;
+                height: auto;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .login-main ol {
+                text-align: left;
+            }
+
+            input {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body bgcolor="beige">
+    <div class="login-header" style="display:flex">
+        <img src="WhatsApp.jpg" style="margin: 2px 0px 0 15px;
+    width: 60px;
+    height: 60px;">
+        <p id="t" style="font-size:25px;color:rgb(41, 237, 48);width:fit-content;height:fit-content;margin:20px 0;">
+            <b>WhatsApp</b>
+        </p>
+    </div>
+    <div class="login-banner">
+        <img src="call.png" style="margin:10px 0 0 0;
+    width: 60px;
+    height: 60px;">
+        <p><span style="font-size:20px;">Download WhatsApp for Windows<br></span>Make calls, share your screen and get a
+            faster experience when
+            you<br> download the Windows app.</p>
+        <a href="https://web.whatsapp.com/desktop/windows/release/x64/WhatsAppSetup.exe"><button
+            style="background-color: rgb(52, 247, 91);border-radius:50px;height:fit-content;width:fit-content;padding: 15px 30px;margin:20px 50px;">Download
+            <img src="down.jpg" height="15px" width="15px" /></button></a>
+    </div>
+    <div class="login-main"
+        style="margin:10px 210px;background-color: white;padding:30px 40px;border:1px solid black;border-radius:20px;width:800px;height:450px;">
+        <p style="font-size: 40px;margin-top: 10px;">Enter code on phone</p>
+        <p id="number" style="font-size: 20px;margin-top: -40px;"></p><br>
+       
+<input placeholder="Enter 6-digit code" style="font-size:20px;padding:5px 20px;width:800px;height:100px;border-radius: 30px;border:none;border-radius:30px;background-color: rgba(128, 128, 128, 0.185);text-align: center;">
+        
+        <br>
+            <ol style="line-height: 30px;font-size: 20px;">
+                <li>Open WhatsApp<img src="WhatsApp.jpg" style="margin:10px 0 0 0;
+    width: 40px;
+    height: 40px;">on your phone</li>
+                <li>On Android tap Menu<img src="menu.png" style="margin:10px 0 0 0;
+    width: 20px;
+    height: 18px;">On iPhone tap Settings <img src="set.png" style="margin:10px 0 0 0;
+    width: 20px;
+    height: 20px;"></li>
+                <li>Tap Linked devices, then Link device</li>
+                <li>Scan the QR code to confirm</li>
+            </ol>
+        <a href="LogIn.html">
+            <p style="text-decoration:underline 2px rgb(46, 210, 46);">Log in with QR code></p>
+        </a>
+    </div>
+    <p style="margin:30px 250px;text-align: center;font-size: 23px;">Don't have a WhatsApp account? <span
+            style="text-decoration:underline 2px rgb(46, 210, 46);">Get started-></span></p>
+    <p style="color:gray;font-size: 18px;text-align: center;">Your personal messages are end-to-end encrypted</p>
+    <p style="color:gray;font-size: 15px;text-align: center;">Terms & Privacy Policy</p>
+
+    <script>
+document.getElementById("number").innerText ="Linking WhatsApp account to " +
+    sessionStorage.getItem("fullNumber");
+</script>
+</body>
+
+</html>

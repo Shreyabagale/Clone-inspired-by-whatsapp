@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp for Business</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        .business-hero {
+            height: 520px;
+            width: 100%;
+            max-width: 1240px;
+            margin: 120px auto 20px;
+            border-radius: 20px;
+            display: flex;
+            background-color: #e5f9ec;
+        }
+
+        .business-hero-left {
+            width: 50%;
+            padding: 60px 40px;
+        }
+
+        .business-hero-right {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .business-title {
+            font-size: 60px;
+            line-height: 64px;
+            margin: 0 0 16px;
+        }
+
+        .business-subtitle {
+            font-size: 20px;
+        }
+
+        .business-cta {
+            margin-top: 24px;
+        }
+
+        .business-cta button {
+            border-radius: 30px;
+            height: 50px;
+            padding: 0 26px;
+            border: 1px solid black;
+            background-color: rgb(12, 196, 49);
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .business-grid {
+            width: 100%;
+            max-width: 1240px;
+            margin: 20px auto 60px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .business-box {
+            width: 260px;
+            border-radius: 24px;
+            border: 1px solid #d1d7db;
+            padding: 18px 20px;
+            background-color: white;
+        }
+
+        .business-box-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .business-box-text {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .business-hero {
+                flex-direction: column;
+                height: auto;
+                margin: 100px 10px 20px;
+            }
+
+            .business-hero-left,
+            .business-hero-right {
+                width: 100%;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
+            .business-title {
+                font-size: 34px;
+                line-height: 40px;
+            }
+
+            .business-subtitle {
+                font-size: 16px;
+            }
+
+            .business-grid {
+                margin: 10px auto 40px;
+            }
+
+            .business-box {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <a href="index.html"><img src="WhatsApp.jpg" alt="WhatsApp Logo"></a>
+        <a href="index.html" style="text-decoration: none;">
+            <p id="t" style="color:rgb(41, 237, 48);"><b>WhatsApp</b></p>
+        </a>
+        <a href="Features.html">
+            <p id="t1">Features</p>
+        </a>
+        <a href="Privacy.html">
+            <p id="t2">Privacy</p>
+        </a>
+        <a href="HelpCenter.html">
+            <p id="t3">Help Center</p>
+        </a>
+        <a href="Blog.html">
+            <p id="t4">Blog</p>
+        </a>
+        <a href="ForBusiness.html">
+            <p id="t5">For Business</p>
+        </a>
+        <a href="Apps.html">
+            <p id="t6">Apps</p>
+        </a>
+        <a href="LogIn.html"><button class="log">Log in &raquo;</button></a>
+        <a href="https://web.whatsapp.com/desktop/windows/release/x64/WhatsAppSetup.exe"><button class="down1">Download
+                <img id="down_img" src="down.jpg" alt="Download Icon" /></button></a>
+    </div>
+
+    <section class="business-hero scroll-animate">
+        <div class="business-hero-left delay-3">
+            <p class="business-title">WhatsApp<br><span style="color:rgb(41, 237, 48);">for Business</span></p>
+            <p class="business-subtitle">
+                Reach your customers on the app they already use to chat with friends and family.
+                Showcase products, answer questions and build relationships at scale.
+            </p>
+            <div class="business-cta">
+                <button>Get WhatsApp Business App</button>
+            </div>
+        </div>
+        <div class="business-hero-right">
+            <img src="head10_img.webp" alt="Business illustration">
+        </div>
+    </section>
+
+    <section class="business-grid scroll-animate">
+        <div class="business-box">
+            <p class="business-box-title">Business profile</p>
+            <p class="business-box-text">
+                Share your address, website, and description so customers know more about your business.
+            </p>
+        </div>
+        <div class="business-box">
+            <p class="business-box-title">Catalog &amp; products</p>
+            <p class="business-box-text">
+                Showcase your products or services inside WhatsApp so people can browse without leaving the chat.
+            </p>
+        </div>
+        <div class="business-box">
+            <p class="business-box-title">Fast replies</p>
+            <p class="business-box-text">
+                Save time with quick replies and automated greeting messages to respond faster to common questions.
+            </p>
+        </div>
+        <div class="business-box">
+            <p class="business-box-title">Labels &amp; organization</p>
+            <p class="business-box-text">
+                Organize your chats with labels like “new customer” or “paid” to keep track of your conversations.
+            </p>
+        </div>
+    </section>
+
+    <div class="footer">
+        <div class="container">
+            <table height="300px" width="1200px">
+                <tr>
+                    <td style="display:flex;text-align: center;padding:50px 0 0 60px;width:fit-content">
+                        <img src="WhatsApp.jpg" height="70px" width="70px" alt="WhatsApp Logo">
+                        <p id="t" style="color:rgb(41, 237, 48);font-size:25px;"><b>WhatsApp</b></p>
+                    </td>
+                    <td style="color:gray;font-size:15px;">What we do</td>
+                    <td style="color:gray;font-size:15px;">Who we are</td>
+                    <td style="color:gray;font-size:15px;">Use WhatsApp</td>
+                    <td style="color:gray;font-size:15px;">Need help?</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Features</td>
+                    <td>About us</td>
+                    <td>Android</td>
+                    <td>Contact Us</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Blog</td>
+                    <td>Careers</td>
+                    <td>iPhone</td>
+                    <td>Help Center</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" style="padding:50px 0 0 60px;width:fit-content;">
+                        <a href="https://web.whatsapp.com/desktop/windows/release/x64/WhatsAppSetup.exe">
+                            <button class="down1">Download <img id="down_img" src="down.jpg"
+                                    alt="Download Icon" /></button>
+                        </a>
+                    </td>
+                    <td>Security</td>
+                    <td>Brand Center</td>
+                    <td>Mac/PC</td>
+                    <td>Apps</td>
+                </tr>
+                <tr>
+                    <td>For Business</td>
+                    <td>Privacy</td>
+                    <td>WhatsApp Web</td>
+                    <td>Security Advisories</td>
+                </tr>
+            </table>
+            <br><br><br>
+            <div class="last" style="border-top:1px solid gray;margin-left:60px;display:flex;">
+                <div class="table_class">
+                    <table id="last" style="width:320px;margin-left:80px;margin-top: 20px;">
+                        <tr>
+                            <td style="font-size: 15px;padding-right: 40px;">2026 © WhatsApp LLC</td>
+                            <td style="font-size: 15px;padding-right: 10px;">Terms & Privacy Policy</td>
+                            <td style="font-size: 15px;">Sitemap</td>
+                        </tr>
+                    </table>
+                </div>
+                <img src="social1.png"
+                    style="border:1px solid white;border-radius:100px;margin:20px 10px 10px 50px;"
+                    height="45px" width="45px" alt="Instagram">
+                <img src="social2.png"
+                    style="border:1px solid white;border-radius:100px;margin:20px 10px 10px 20px;background-color: beige;"
+                    height="45px" width="45px" alt="Facebook">
+                <img src="social3.png"
+                    style="border:1px solid white;border-radius:100px;margin:20px 10px 10px 20px;background-color: beige;"
+                    height="45px" width="45px" alt="Twitter">
+                <img src="social4.png"
+                    style="border:1px solid white;border-radius:100px;margin:20px 150px 10px 20px;background-color: beige;"
+                    height="45px" width="45px" alt="YouTube">
+                <div class="language" style="margin-top:20px;margin-left:20px;">
+                    <select>
+                        <option selected>English</option>
+                        <option>हिन्दी</option>
+                        <option>Español</option>
+                        <option>Deutsch</option>
+                        <option>Français</option>
+                        <option>Italiano</option>
+                        <option>Português</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

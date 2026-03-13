@@ -1,0 +1,567 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Apps</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: rgba(34, 236, 34, 0.047);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Head-1  */
+        .head {
+            height: 80px;
+            width: 100%;
+            background-color: rgba(245, 245, 245, 0.889);
+            display: flex;
+            justify-content: center;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+
+            transition: background-color 0.3s ease;
+        }
+
+        .head.scrolled {
+            background-color: rgba(245, 245, 245, 0.75);
+            backdrop-filter: blur(6px);
+        }
+
+        .head img {
+            margin: 2px 0px 0 15px;
+            width: 60px;
+            height: 60px;
+        }
+
+        #t {
+            font-size: 25px;
+            margin-top: 17px;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        #t1,
+        #t2,
+        #t3,
+        #t4,
+        #t5,
+        #t6 {
+            font-size: 20px;
+            margin: 20px;
+            height: fit-content;
+            width: fit-content;
+            /* transition:2s; */
+        }
+
+        #t1:hover,
+        #t2:hover,
+        #t3:hover,
+        #t4:hover,
+        #t5:hover,
+        #t6:hover {
+            text-decoration: underline 2px rgb(41, 237, 48);
+            /* transition-timing-function: ease-in-out; */
+        }
+
+        .log {
+            border-radius: 30px;
+            height: 50px;
+            width: 120px;
+            text-align: center;
+            font-size: medium;
+            border: solid 1px black;
+            margin: 15px;
+            background-color: white;
+        }
+
+        .down1 {
+            border-radius: 30px;
+            height: 50px;
+            width: 160px;
+            text-align: center;
+            font-size: 15px;
+            border: solid 1px black;
+            margin: 15px;
+            background-color: rgb(41, 237, 48);
+            text-decoration: none;
+        }
+
+        #down_img {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+        }
+
+        .head a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container {
+            height: fit-content;
+            width: 100%;
+            max-width: 1240px;
+            display: flex;
+            margin: 0 auto;
+            background-color: rgba(34, 236, 34, 0.232);
+            border-radius: 20px;
+        }
+
+        .containerP {
+            width: 50%;
+            padding: 40px 40px 40px 50px;
+            justify-content: center;
+        }
+
+        .containerI {
+            width: 50%;
+            padding: 40px 30px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .msg {
+            font-size: 52px;
+            margin-bottom: 16px;
+        }
+
+        .msg1 {
+            font-size: 14px;
+        }
+
+        .learn {
+            font-size: 20px;
+            text-decoration: underline 2px rgb(41, 237, 48);
+        }
+
+        .learn:hover {
+            color: rgb(41, 237, 48);
+        }
+
+
+
+        /*News section 1*/
+        .news,
+        .options {
+            height: fit-content;
+            width: 100%;
+            max-width: 1240px;
+            background: #b8eac3;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 20px auto;
+            border-radius: 20px;
+        }
+
+        .n_left,
+        .o_left {
+            width: 40%;
+            height: 100%;
+        }
+
+        .cards,
+        .o_cards {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            gap: 15px;
+            width: 60%;
+            padding: 40px 0 0 0;
+        }
+
+        .card,
+        .o_card {
+            width: 300px;
+            height: 340px;
+            margin: 0;
+            background: #f6f6f6;
+            border-radius: 30px;
+            flex-shrink: 0;
+        }
+
+        .n_title {
+            font-size: 35px;
+            margin-left: 20px;
+        }
+
+        .n2_img {
+            width: 100%;
+            height: 200px;
+            border-radius: 30px 30px 0 0;
+        }
+
+        #leftBtn,
+        #rightBtn,
+        #leftBtn2,
+        #rightBtn2 {
+            border: 2px solid black;
+            border-radius: 100px;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            user-select: none;
+        }
+
+        .disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+
+        /**/
+        footer {
+            background-color: black;
+            height: fit-content;
+            width: 100%;
+        }
+
+        .end {
+            width: fit-content;
+            height: fit-content;
+        }
+
+        table {
+            color: white;
+        }
+
+        td {
+            font-size: 20px;
+            font-style: bold;
+            height: fit-content;
+        }
+
+        .down1 {
+            border-radius: 30px;
+            height: 50px;
+            width: 160px;
+            text-align: center;
+            font-size: 15px;
+            border: solid 1px black;
+            margin: 15px 0 0 0;
+            background-color: rgb(12, 196, 49);
+            text-decoration: none;
+        }
+
+        /* */
+        .language select {
+            background-color: transparent;
+            color: white;
+            width: 180px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 22px;
+            border-collapse: collapse;
+            offset: 0;
+            outline: 0;
+            padding: 10px 18px;
+            font-size: 14px;
+        }
+
+        .language option {
+            background-color: white;
+            color: black;
+        }
+
+
+        @media (max-width: 768px) {
+            .head {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px;
+            }
+
+            .head p,
+            .head button {
+                font-size: 14px;
+                margin: 5px;
+            }
+
+            .container {
+                flex-direction: column;
+                margin: 100px 10px 10px;
+            }
+
+            .containerP,
+            .containerI {
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .msg {
+                font-size: 32px;
+            }
+
+            .msg1 {
+                font-size: 13px;
+            }
+
+            .options,
+            .news {
+                flex-direction: column;
+                width: calc(100% - 20px);
+                margin: 10px auto;
+            }
+
+            .n_left,
+            .o_left,
+            .cards,
+            .o_cards {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            .card,
+            .o_card {
+                width: 260px;
+                height: auto;
+            }
+
+            footer table {
+                width: 100%;
+            }
+
+            .last {
+                flex-direction: column;
+                margin-left: 0 !important;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <a href="index.html"><img src="WhatsApp.jpg" alt="WhatsApp Logo"></a>
+        <a href="index.html" style="text-decoration: none;">
+            <p id="t" style="color:rgb(41, 237, 48);"><b>WhatsApp</b></p>
+        </a>
+        <a href="Features.html">
+            <p id="t1">Features</p>
+        </a>
+        <a href="Privacy.html">
+            <p id="t2">Privacy</p>
+        </a>
+        <a href="HelpCenter.html">
+            <p id="t3">Help Center</p>
+        </a>
+        <a href="Blog.html">
+            <p id="t4">Blog</p>
+        </a>
+        <a href="ForBusiness.html">
+            <p id="t5">For Business</p>
+        </a>
+        <a href="Apps.html">
+            <p id="t6">Apps</p>
+        </a>
+        <a href="LogIn.html"><button class="log">Log in &raquo;</button></a>
+        <a href="https://web.whatsapp.com/desktop/windows/release/x64/WhatsAppSetup.exe"><button class="down1">Download
+                <img id="down_img" src="down.jpg" alt="Download Icon" /></button></a>
+    </div>
+    <div class="container scroll-animate" style="margin-top:100px;">
+        <div class="containerP delay-3">
+            <p class="msg">Download WhatsApp<span style="font-size: 20px;"><br>Start chatting and calling privately with
+                    WhatsApp across your<br> devices.</span></p>
+            <p class="msg1">By installing WhatsApp, you agree to our Terms & Privacy Policy.</p>
+
+            <fieldset
+                style="background-color: white; border: 1px solid black; padding: 15px; margin-top: 20px;width:fit-content;border-radius:30px;">
+                <p style="font-size: 25px;">Desktop<span style="font-size: 35px;"><br>Windows</span></p>
+                <p style="font-size: 20px;">Get calling, screen sharing and a faster experience with<br> the Windows
+                    app. Requires Windows 10 or newer.</p>
+            </fieldset>
+
+            <a href="LogIn.html">
+                <p class="learn">Login from your browser ↗</p>
+            </a>
+        </div>
+        <div class="containerI scroll-animate">
+            <img src="App_i1.jpeg" id="i1">
+        </div>
+    </div>
+
+    <div class="options scroll-animate" style="background-color: rgba(255, 217, 205, 0.778);">
+        <div class="o_left scroll-animate">
+            <p style="font-size: 60px;height:fit-content;width:fit-content;">Other download<br> options</p>
+            <h4 style="height:fit-content;width:fit-content;">Stay connected with friends and family across your
+                devices.</h4>
+
+            <fieldset style="display:flex;border:none;margin-top:30px;">
+                <p id="leftBtn2">&lt;</p>&nbsp;&nbsp;
+                <p id="rightBtn2">&gt;</p>
+            </fieldset>
+
+        </div>
+        <div class="o_cards scroll-animate">
+            <div id="o_card1" class="o_card"
+                style="background-color: white; border: none; padding: 15px; margin-top: 10px;width:450px;height:250px;border-radius:30px;">
+                <p style="font-size: 20px;">Tablet<span style="font-size: 35px;"><br>iPadOS</span></p>
+                <p style="font-size: 15px;">All the features you love: chats, calling, status, screen<br> sharing, and
+                    more,
+                    with a bigger screen using the<br> WhatsApp iPad app.</p>
+                <p style="font-size: 12px;">Minimum Requirements: iPadOS 15.1 or newer</p>
+                <img src="op_img1.jpeg">
+            </div>
+            <div id="o_card2" class="o_card"
+                style="background-color: white; border: none; padding: 15px; margin-top: 10px;width:450px;height:250px;border-radius:30px;">
+                <p style="font-size: 20px;">Mobile/Tablet<span style="font-size: 35px;"><br>IOS</span></p>
+                <p style="font-size: 15px;">Minimum Requirements (Version 22.13.74) Requires <br>iOS 12.0 or newer.</p>
+                <img src="op_img1.jpeg">
+            </div>
+            <div id="o_card3" class="o_card"
+                style="background-color: white; border: none; padding: 15px; margin-top: 10px;width:450px;height:250px;border-radius:30px;">
+                <p style="font-size: 20px;">Mobile/Tablet<span style="font-size: 35px;"><br>Android</span></p>
+                <p style="font-size: 15px;">Minimum Requirements (Version 2.22.13.77) Android OS 4.0.3 or above</p>
+                <img src="op_img1.jpeg">
+            </div>
+            <div id="o_card4" class="o_card"
+                style="background-color: white; border: none; padding: 15px; margin-top: 10px;width:450px;height:250px;border-radius:30px;">
+                <p style="font-size: 20px;">Desktop<span style="font-size: 35px;"><br>Mac</span></p>
+                <p style="font-size: 15px;">Get calling, screen sharing and faster experience with<br> the Mac app.
+                    Requires
+                    macOS 12.1 or newer. Test our<br> latest features by downloading our beta app.</p>
+                <a href="LogIn.html"><p class="learn" style="margin-left: 20px;color:black;">Download ></p></a>
+            </div>
+            <div id="o_card5" class="o_card"
+                style="background-color: white; border: none; padding: 15px; margin-top: 10px;width:450px;height:250px;border-radius:30px;">
+                <p style="font-size: 20px;">Browser<span style="font-size: 35px;"><br>Whatsapp web</span></p>
+                <p style="font-size: 15px;">Don't see your device supported? Use WhatsApp on <br>your browser.</p>
+                <a href="LogIn.html"><button class="log">Log in &raquo;</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="news" style="background-color: white;">
+        <div class="n_left">
+            <p style="font-size: 60px;height:fit-content;width:fit-content;">Already<br>downloaded?</p>
+            <h4 style="height:fit-content;width:fit-content;">Learn more about what you can do on WhatsApp.</h4>
+
+            <fieldset style="display:flex;border:none;margin-top:100px;">
+                <p id="leftBtn">&lt;</p>&nbsp;&nbsp;
+                <p id="rightBtn">&gt;</p>
+            </fieldset>
+
+        </div>
+
+        <div class="cards">
+            <div id="card1" class="card">
+                <img src="n2_pic1.png" class="n2_img">
+                <h2 class="n_title">Stay<br>connected</h2>
+                <p class="learn" style="margin-left: 20px;color:black;">Learn More ↗</p>
+            </div>
+            <div id="card2" class="card">
+                <img src="n2_pic2.png" class="n2_img">
+                <h2 class="n_title">Build<br>community</h2>
+                <p class="learn" style="margin-left: 20px;color:black;">Learn More ↗</p>
+            </div>
+            <div id="card3" class="card">
+                <img src="n2_pic3.png" class="n2_img">
+                <h2 class="n_title">Do more with<br>Meta AI</h2>
+                <p class="learn" style="margin-left: 20px;color:black;">Learn More ↗</p>
+            </div>
+            <div id="card4" class="card">
+                <img src="n2_pic4.png" class="n2_img">
+                <h2 class="n_title">Express<br>yourself</h2>
+                <p class="learn" style="margin-left: 20px;color:black;">Learn More ↗</p>
+            </div>
+            <div id="card5" class="card">
+                <img src="n2_pic5.png" class="n2_img">
+                <h2 class="n_title">WhatsApp<br>business</h2>
+                <p class="learn" style="margin-left: 20px;color:black;">Learn More ↗</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="end">
+            <table height="300px" width="1200px">
+                <tr>
+                    <td style="display:flex;text-align: center;padding:50px 0 0 60px;width:fit-content"> <img
+                            src="WhatsApp.jpg" height="70px" width="70px" alt="WhatsApp Logo">
+                        <p id="t" style="color:rgb(41, 237, 48);font-size:25px;"><b>WhatsApp</b></p>
+                    </td>
+                    <td style="color:gray;font-size:15px;height:">What we do</td>
+                    <td style="color:gray;font-size:15px;">Who we are</td>
+                    <td style="color:gray;font-size:15px;">Use WhatsApp</td>
+                    <td style="color:gray;font-size:15px;">Need help?</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Features</td>
+                    <td>About us</td>
+                    <td>Android</td>
+                    <td>Contact Us</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Blog</td>
+                    <td>Careers</td>
+                    <td>iPhone</td>
+                    <td>Help Center</td>
+                </tr>
+                <tr>
+                    <td rowspan="2" style="padding:50px 0 0 60px;width:fit-content;"><a
+                            href="https://web.whatsapp.com/desktop/windows/release/x64/WhatsAppSetup.exe"><button
+                                class="down1">Download <img id="down_img" src="down.jpg"
+                                    alt="Download Icon" /></button></a></td>
+                    <td>Security</td>
+                    <td>Brand Center</td>
+                    <td>Mac/PC</td>a
+                    <td>Apps</td>
+                </tr>
+                <tr>
+                    <td>For Business</td>
+                    <td>Privacy</td>
+                    <td>WhatsApp Web</td>
+                    <td>Security Advisories</td>
+                </tr>
+            </table>
+            <br><br><br>
+            <div class="last" style="border-top:1px solid gray;margin-left:60px;display:flex;">
+                <div class="table_class">
+                    <table id="last" style="width:320px;margin-left:80px;margin-top: 20px;">
+                        <tr>
+                            <td style="font-size: 15px;padding-right: 40px;">2026 © WhatsApp LLC</td>
+                            <td style="font-size: 15px;padding-right: 10px;">Terms & Privacy Policy</td>
+                            <td style="font-size: 15px;">Sitemap</td>
+                        </tr>
+                    </table>
+                </div>
+                <img src="social1.png" style="border:1px solid white;border-radius:100px;margin:20px 10px 10px 50px;"
+                    height="45px" width="45px">
+                <img src="social2.png"
+                    style="border:1px solid white;border-radius:100px;margin:20px 10px 10px 20px;background-color: beige;"
+                    height="45px" width="45px">
+                <img src="social3.png"
+                    style="border:1px solid white;border-radius:100px;margin:20px 10px 10px 20px;background-color: beige;"
+                    height="45px" width="45px">
+                <img src="social4.png"
+                    style="border:1px solid white;border-radius:100px;margin:20px 150px 10px 20px;background-color: beige;"
+                    height="45px" width="45px">
+                <div class="language" style="margin-top:20px;margin-left:20px;">
+                    <select>
+                        <option selected>English</option>
+                        <option>हिन्दी</option>
+                        <option>Español</option>
+                        <option>Deutsch</option>
+                        <option>Français</option>
+                        <option>Italiano</option>
+                        <option>Português</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
